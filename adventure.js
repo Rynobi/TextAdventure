@@ -14,10 +14,12 @@ function setup() {
     encodeButton = select('#encodeButton');
     decodeButton = select('#decodeButton');
     animationToggle = select('#animationToggle');
+    fullscreenButton = select('#fullscreenButton');
 
     shiftInput.changed(updateShiftValue);
     encodeButton.mousePressed(encodeMessage);
     decodeButton.mousePressed(decodeMessage);
+    fullscreenButton.mousePressed(toggleFullscreen);
 }
 
 function windowResized() {
@@ -127,6 +129,14 @@ class Particle {
 
     isOffScreen() {
         return (this.direction === 1) ? this.x > width : this.x < 0; 
+    }
+}
+
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
     }
 }
 

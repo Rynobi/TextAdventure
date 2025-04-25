@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,6 +61,19 @@
             margin-left: auto;
             margin-right: auto; 
         }
+        .fullscreen-button {
+            background-color: #000; 
+            color: #0f0; 
+            border: 1px solid #0f0; 
+            padding: 10px; 
+            cursor: pointer; 
+            position: absolute; 
+            bottom: 20px; 
+            right: 20px; 
+        }
+        .fullscreen-button:hover {
+            background-color: #111; 
+        }
     </style>
 </head>
 <body>
@@ -82,6 +96,7 @@
         <button id="encodeButton">Encode</button>
     </div>
     <div id="encodedMessage"></div>
+    <button id="fullscreenButton" class="fullscreen-button">Fullscreen</button>
 
 </body>
 </html>
