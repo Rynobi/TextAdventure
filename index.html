@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEASAR CIPHER</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.dom.js"></script>
+    <script src="adventure.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000; 
+            color: #0f0; 
+            padding: 20px;
+        }
+        textarea {
+            padding: 10px;
+            margin: 10px;
+            width: calc(100% - 42px); 
+            max-width: 400px; 
+            height: 100px; 
+            box-sizing: border-box; 
+            resize: vertical; 
+            background-color: #000; 
+            color: #0f0; 
+            border: 1px solid #0f0; 
+        }
+        input[type="number"], button {
+            padding: 10px;
+            margin: 10px;
+            width: 80px; 
+            background-color: #000; 
+            color: #0f0; 
+            border: 1px solid #0f0; 
+            cursor: pointer; 
+        }
+        input[type="number"]:focus, button:hover {
+            background-color: #111; 
+        }
+        #shiftContainer, #toggleContainer {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            margin: 10px; 
+        }
+        #buttonContainer {
+            display: flex;
+            justify-content: center; 
+            margin: 10px; 
+        }
+        #encodedMessage {
+            margin-top: 20px;
+            font-weight: bold;
+            padding: 10px;
+            border: 2px solid #0f0; 
+            background-color: #000; 
+            display: none; 
+            max-width: 400px; 
+            margin-left: auto;
+            margin-right: auto; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>//CEASAR//CIPHER//</h1>
+    <textarea id="inputText" placeholder="Enter your message"></textarea>
+    <br>
+    <div id="shiftContainer">
+        <label for="shiftInput">SHIFT: </label>
+        <input type="number" id="shiftInput" min="1" max="25" value="3">
+    </div>
+    <br>
+    <div id="toggleContainer">
+        <label for="animationToggle">COOL: </label>
+        <input type="checkbox" id="animationToggle" checked>
+    </div>
+    <br>
+    <div id="buttonContainer">
+        <button id="decodeButton">Decode</button>
+        <button id="encodeButton">Encode</button>
+    </div>
+    <div id="encodedMessage"></div>
+
+</body>
+</html>
